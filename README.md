@@ -60,49 +60,73 @@ Priority Queue
 Hash Tables
 
 Graphs
+
 Dijkstra's Algorithm
+
 Searching
+
 Sorting
+
 File Handling
+
 OOP in C++
+
 Classes & Objects
+
 Encapsulation
+
 Inheritance
+
 Polymorphism
+
 Constructors & Destructors
+
 Member Functions
-Object Relationships
-Exception Handling
+
 File Handling
 
 ## System Modules
 
-Donor Module
+Donor Module-
 Allows donors to register surplus food and provide information such as food type, quantity, location, and availability.
-NGO Module
+
+NGO Module-
 Allows NGOs to register their food requirements and receive suitable donations based on availability and priority.
-Volunteer Module
+
+Volunteer Module-
 Manages volunteers responsible for collecting and delivering donated food.
-Food Donation Module
+
+Food Donation Module-
 Stores and manages information about available food donations, including quantity, type, donor, and status.
-Requirement Module
+
+Requirement Module-
 Maintains food requirements submitted by NGOs and prioritizes them according to urgency.
-Delivery Module
+
+Delivery Module-
 Manages food pickup and delivery operations and determines efficient routes between locations.
+
 
 ## Tech Stack
 
 C++ — Core system, OOP, DSA implementation
+
 Data Structures & Algorithms — Efficient data management and processing
+
 File Handling — Persistent storage of records
+
 Git & GitHub — Version control and project collaboration
+
 
 ## Team Members
 
 Aditya Dutta — [Lead]
+
 Utsav Bajoria — [Member 1]
+
 Vishwajeet Singh — [Member 2]
+
 Raghav Pandey — [Member 3]
+
 
 ## Expected Outcome
 
