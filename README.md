@@ -1,8 +1,12 @@
-FoodRescue — Smart Food Donation & Rescue Management System
-About
+### FoodRescue — Smart Food Donation & Rescue Management System
+
+# About
+
 FoodRescue is a C++-based food donation and rescue management system designed to connect food donors, NGOs, volunteers, and beneficiaries to efficiently manage surplus food donations.
 The system uses Data Structures & Algorithms (DSA) and Object-Oriented Programming (OOP) concepts to automate food donation management, prioritize urgent requirements, assign volunteers, manage deliveries, and maintain donation records digitally.
-Objectives
+
+# Objectives
+
 Reduce food wastage by efficiently managing surplus food donations
 Connect food donors with NGOs and organizations in need
 Prioritize food requirements based on urgency
@@ -11,7 +15,9 @@ Efficiently track food donations and their delivery status
 Maintain donor, NGO, volunteer, and donation records digitally
 Optimize delivery routes using graph algorithms
 Reduce manual work in food rescue coordination
-Features
+
+# Features
+
 Smart food donation registration
 Donor and NGO management
 Food requirement and request management
@@ -22,7 +28,9 @@ Optimized delivery route generation
 Digital record management
 Search and retrieval of donation records
 File-based data storage
-Concepts Used
+
+# Concepts Used
+
 DSA in C++
 Arrays
 Linked Lists
@@ -44,7 +52,9 @@ Member Functions
 Object Relationships
 Exception Handling
 File Handling
-System Modules
+
+# System Modules
+
 Donor Module
 Allows donors to register surplus food and provide information such as food type, quantity, location, and availability.
 NGO Module
@@ -57,15 +67,21 @@ Requirement Module
 Maintains food requirements submitted by NGOs and prioritizes them according to urgency.
 Delivery Module
 Manages food pickup and delivery operations and determines efficient routes between locations.
-Tech Stack
+
+# Tech Stack
+
 C++ — Core system, OOP, DSA implementation
 Data Structures & Algorithms — Efficient data management and processing
 File Handling — Persistent storage of records
 Git & GitHub — Version control and project collaboration
-Team Members
+
+## Team Members
+
 Aditya Dutta — [Lead]
 Utsav Bajoria — [Member 1]
 Vishwajeet Singh — [Member 2]
 Raghav Pandey — [Member 3]
-Expected Outcome
+
+## Expected Outcome
+
 FoodRescue aims to provide an organized and efficient platform for managing surplus food donations and rescue operations. By combining DSA and OOP concepts, the system reduces manual coordination, prioritizes urgent food requirements, manages volunteers and deliveries, and helps ensure that available food reaches organizations in need efficiently.
