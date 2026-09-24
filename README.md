@@ -1,6 +1,71 @@
-# FOOD-RESCUE
-Restaurants,hostels and events regularly generate surplus food that is still safe to eat, while nearby NGOs and shelters often struggle to obtain enough food for those in need. Without a coordinated system donors have no easy way to reach the right recipients in time and usable food goes to waste while manual, ad-hoc coordination fails to account for expiry time, quantity and distance together.FoodRescue models donors, food items, NGOs, volunteers and deliveries as classes using Object-Oriented Programming. Each donation is assigned a priority score based on expiry urgency, quantity match and distance, and a priority queue orders donations so that food closest to expiry is matched first. Locations and roads are represented as a weighted graph, and Dijkstra's algorithm computes the shortest route for volunteer pickup and delivery, while a hash table enables fast lookup of donor, NGO, and volunteer records.
-Key Technologies include C++, Object-Oriented Programming, and core Data Structures (priority queue, graph, hash table , queue, vector, and linked list )along with Dijkstra's algorithm and simple file handling (CSV/text files) for storage.
-Our Proposed Outcome is a working console based application that registers donors and NGOs, prioritizes and matches surplus food based on urgency and location, computes efficient delivery routes and tracks each donation from registration to distribution while demonstrating how DSA and OOP concepts can solve a real world food wastage and redistribution problem.
-Key Technologies and Concepts:
-C++, Object-Oriented Programming, Data Structures and Algorithms, Priority Queue, Graph, Dijkstra's Algorithm, Hash Table,Queue, Vector, Linked List, File Handling, and CSV/Text-based Storage.
+FoodRescue — Smart Food Donation & Rescue Management System
+About
+FoodRescue is a C++-based food donation and rescue management system designed to connect food donors, NGOs, volunteers, and beneficiaries to efficiently manage surplus food donations.
+The system uses Data Structures & Algorithms (DSA) and Object-Oriented Programming (OOP) concepts to automate food donation management, prioritize urgent requirements, assign volunteers, manage deliveries, and maintain donation records digitally.
+Objectives
+Reduce food wastage by efficiently managing surplus food donations
+Connect food donors with NGOs and organizations in need
+Prioritize food requirements based on urgency
+Manage volunteers and delivery assignments
+Efficiently track food donations and their delivery status
+Maintain donor, NGO, volunteer, and donation records digitally
+Optimize delivery routes using graph algorithms
+Reduce manual work in food rescue coordination
+Features
+Smart food donation registration
+Donor and NGO management
+Food requirement and request management
+Priority-based food allocation
+Volunteer management and assignment
+Food pickup and delivery tracking
+Optimized delivery route generation
+Digital record management
+Search and retrieval of donation records
+File-based data storage
+Concepts Used
+DSA in C++
+Arrays
+Linked Lists
+Queue
+Priority Queue
+Hash Tables
+Graphs
+Dijkstra's Algorithm
+Searching
+Sorting
+File Handling
+OOP in C++
+Classes & Objects
+Encapsulation
+Inheritance
+Polymorphism
+Constructors & Destructors
+Member Functions
+Object Relationships
+Exception Handling
+File Handling
+System Modules
+Donor Module
+Allows donors to register surplus food and provide information such as food type, quantity, location, and availability.
+NGO Module
+Allows NGOs to register their food requirements and receive suitable donations based on availability and priority.
+Volunteer Module
+Manages volunteers responsible for collecting and delivering donated food.
+Food Donation Module
+Stores and manages information about available food donations, including quantity, type, donor, and status.
+Requirement Module
+Maintains food requirements submitted by NGOs and prioritizes them according to urgency.
+Delivery Module
+Manages food pickup and delivery operations and determines efficient routes between locations.
+Tech Stack
+C++ — Core system, OOP, DSA implementation
+Data Structures & Algorithms — Efficient data management and processing
+File Handling — Persistent storage of records
+Git & GitHub — Version control and project collaboration
+Team Members
+Aditya Dutta — [Lead]
+Utsav Bajoria — [Member 1]
+Vishwajeet Singh — [Member 2]
+Raghav Pandey — [Member 3]
+Expected Outcome
+FoodRescue aims to provide an organized and efficient platform for managing surplus food donations and rescue operations. By combining DSA and OOP concepts, the system reduces manual coordination, prioritizes urgent food requirements, manages volunteers and deliveries, and helps ensure that available food reaches organizations in need efficiently.
