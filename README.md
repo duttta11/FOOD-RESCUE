@@ -8,12 +8,19 @@ The system uses Data Structures & Algorithms (DSA) and Object-Oriented Programmi
 ## Objectives
 
 Reduce food wastage by efficiently managing surplus food donations
+
 Connect food donors with NGOs and organizations in need
+
 Prioritize food requirements based on urgency
+
 Manage volunteers and delivery assignments
+
 Efficiently track food donations and their delivery status
+
 Maintain donor, NGO, volunteer, and donation records digitally
+
 Optimize delivery routes using graph algorithms
+
 Reduce manual work in food rescue coordination
 
 ## Features
