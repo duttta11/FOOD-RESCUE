@@ -26,24 +26,39 @@ Reduce manual work in food rescue coordination
 ## Features
 
 Smart food donation registration
+
 Donor and NGO management
+
 Food requirement and request management
+
 Priority-based food allocation
+
 Volunteer management and assignment
+
 Food pickup and delivery tracking
+
 Optimized delivery route generation
+
 Digital record management
+
 Search and retrieval of donation records
+
 File-based data storage
 
 ## Concepts Used
 
 DSA in C++
+
 Arrays
+
 Linked Lists
+
 Queue
+
 Priority Queue
+
 Hash Tables
+
 Graphs
 Dijkstra's Algorithm
 Searching
