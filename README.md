@@ -1,11 +1,11 @@
-### FoodRescue — Smart Food Donation & Rescue Management System
+# FoodRescue — Smart Food Donation & Rescue Management System
 
-# About
+## About
 
 FoodRescue is a C++-based food donation and rescue management system designed to connect food donors, NGOs, volunteers, and beneficiaries to efficiently manage surplus food donations.
 The system uses Data Structures & Algorithms (DSA) and Object-Oriented Programming (OOP) concepts to automate food donation management, prioritize urgent requirements, assign volunteers, manage deliveries, and maintain donation records digitally.
 
-# Objectives
+## Objectives
 
 Reduce food wastage by efficiently managing surplus food donations
 Connect food donors with NGOs and organizations in need
@@ -16,7 +16,7 @@ Maintain donor, NGO, volunteer, and donation records digitally
 Optimize delivery routes using graph algorithms
 Reduce manual work in food rescue coordination
 
-# Features
+## Features
 
 Smart food donation registration
 Donor and NGO management
@@ -29,7 +29,7 @@ Digital record management
 Search and retrieval of donation records
 File-based data storage
 
-# Concepts Used
+## Concepts Used
 
 DSA in C++
 Arrays
@@ -53,7 +53,7 @@ Object Relationships
 Exception Handling
 File Handling
 
-# System Modules
+## System Modules
 
 Donor Module
 Allows donors to register surplus food and provide information such as food type, quantity, location, and availability.
@@ -68,7 +68,7 @@ Maintains food requirements submitted by NGOs and prioritizes them according to 
 Delivery Module
 Manages food pickup and delivery operations and determines efficient routes between locations.
 
-# Tech Stack
+## Tech Stack
 
 C++ — Core system, OOP, DSA implementation
 Data Structures & Algorithms — Efficient data management and processing
