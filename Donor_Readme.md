@@ -1,49 +1,49 @@
 # FoodRescue – Donor & Food Donation Module
 
 ## About
-The module, belonging to the FoodRescue project, has been written in C++ and carries out the function of managing donors and their food donations. It allows users to add donations, see them, update them, delete them and to check the availability and expiry status of the food.
+The module, which is part of the FoodRescue project, has been developed using C++ and is used for managing donors and their food donations. It enables users to add donations, view them, update them, delete them and to check the availability and expiry status of the food.
 
 ## Header File
 `FoodRescue.h`
 
 ### Libraries Used
-- `iostream` is used for input and output.
-– To keep a number of food donations.
-- `string` holds text data.
+The iostream facility is used for input and output.
+– In order to have a number of food donations.
+- `string` stores text data.
 
 ## Classes and Properties
 
 ### 1. FoodDonation Class
-The class has details concerning a single food donation.
+The class includes information about one food donation.
 
 **Properties:**
-- id, the unique identifier of the donation.
-The name of the food item which has been donated.
+- id, the unique identifier for the donation.
+The name of the food item that has been donated.
 The quantity of food.
-- expiryDate – the date after which the food is no longer fit to be eaten.
-– Shows whether or not the food is available.
+- expiryDate – the date beyond which the food is no longer suitable for consumption.
+– Indicates whether or not the food is available.
 
 **Function:**
-- `display()` – It shows all the details regarding a food donation.
+- `display()` – This function provides all the details about a food donation.
 
 ### 2. Donor Class
-The class handles the storage of information on donors and is in charge of their food donations.
+The class is responsible for storing information about donors and for handling their food donations.
 
 **Properties:**
-The donorID is the unique identifier for the donor.
+The donorID is the unique ID for the donor.
 The donor's name.
-- `phone` – the donor’s contact number.
+- `phone` means the donor’s contact number.
 The donor's address.
-- `donations` – a vector that contains multiple `FoodDonation` objects.
+- `donations` – a vector consisting of several `FoodDonation` objects.
 
 **Functions:**
-The function `displayDonor()` displays the donor's details.
+The function displayDonor() shows the donor's details.
 addDonation() adds a new food donation.
-– the function displayDonations() shows all the donations.
+– the function displayDonations() displays all the donations.
 - `updateDonation()` updates current donation details.
 - `deleteDonation()` marks a donation as unavailable.
-– checkExpiry() – this function serves the purpose of manually checking and updating the expiry status of food.
-– the function showAvailableFood displays only those food donations which are available.
+– checkExpiry() – this function is used for manually verifying and updating the expiry status of food.
+– The function showAvailableFood shows only the food donations that are available.
 
 ## C++ Concepts Used
 - Classes and Objects
@@ -54,13 +54,13 @@ addDonation() adds a new food donation.
 
 ## Working
 1. Store donor details.
-2. The food donations should also include the amount and the expiry date.
-3. Look at the donation records, make changes to them, or delete them.
-4. Check whether the food has expired.
-5. Indicate the food that is available for redistribution.
+2. The food donations should also state the quantity and the expiry date.
+3. Check the donation records, alter them, or delete them.
+Make sure that the food has not expired.
+5. State the type of food that is available for redistribution.
 
 ## Note
-The user must manually check the food's expiry date; currently, the system keeps the data in memory and does not automatically save it to a file or database.
+The user has to check manually whether the food has expired; at present, the system retains the data in memory and does not automatically save it to a file or database.
 
 ## Conclusion
-The module allows for efficient management of donors and food donations and has the basic features needed for organizing surplus food and for enabling its redistribution through the FoodRescue project.
+The module enables efficient management of donors and food donations and includes the fundamental features required for organizing surplus food and for allowing its redistribution via the FoodRescue project.
