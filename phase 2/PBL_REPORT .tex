@@ -1,0 +1,526 @@
+\documentclass[12pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[
+    a4paper,
+    top=1.55cm,
+    bottom=1.35cm,
+    left=1.75cm,
+    right=1.75cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{ragged2e}
+
+% ============================================================
+% COLORS
+% ============================================================
+\definecolor{GEUBlue}{RGB}{43,91,145}
+\definecolor{GEUBannerBlue}{RGB}{0,102,148}
+\definecolor{GEUYellow}{RGB}{255,201,38}
+\definecolor{InstructionGrey}{RGB}{125,125,125}
+
+% ============================================================
+% GENERAL SETTINGS
+% ============================================================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1}
+
+% ============================================================
+% HEADER / FOOTER
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{%
+    \fontsize{10.5}{12}\selectfont
+    DSCPP-III-2026-T381
+}
+
+\fancyhead[R]{%
+    \fontsize{10.5}{12}\selectfont
+    PHASE-II PROJECT PROGRESS
+}
+
+\fancyfoot[R]{%
+    \fontsize{10}{12}\selectfont
+    Page \thepage
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\headheight}{20pt}
+\setlength{\headsep}{0.65cm}
+\setlength{\footskip}{0.65cm}
+
+% ============================================================
+% BOTTOM YELLOW LINE
+% ============================================================
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[GEUYellow]
+    (current page.south west)
+    rectangle
+    ([yshift=0.14cm]current page.south east);
+\end{tikzpicture}
+}
+
+% ============================================================
+% CUSTOM COMMANDS
+% ============================================================
+\newcommand{\sectiontitle}[1]{%
+    {\color{GEUBlue}
+    \fontsize{18}{22}\selectfont #1}
+}
+
+\newcommand{\instruction}[1]{%
+    {\color{InstructionGrey}
+    \fontsize{10.5}{13}\selectfont #1}
+}
+
+\newcommand{\answerbox}[2]{%
+    \begin{tabularx}{\textwidth}{
+        |>{\raggedright\arraybackslash}X|}
+        \hline
+        \parbox[t][#1][t]{\dimexpr\linewidth-12pt\relax}{
+            \vspace{5pt}
+            \fontsize{11}{13}\selectfont #2
+        }\\
+        \hline
+    \end{tabularx}
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+% ============================================================
+% PAGE 1
+% ============================================================
+
+\vspace*{0.10cm}
+
+% Upload Graphic Era logo as graphicera_logo.png
+\includegraphics[width=14.0cm]{geulogo.png}
+
+\vspace{0.70cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.17cm}
+    {\color{GEUYellow}
+    \fontsize{16.5}{20}\selectfont
+    \bfseries
+    PROJECT AND TEAM INFORMATION}
+    \vspace{0.17cm}
+}}
+
+\vspace{0.80cm}
+
+% PROJECT TITLE
+\sectiontitle{Project Title}
+
+\vspace{0.05cm}
+
+\vspace{0.40cm}
+
+\answerbox{1.00cm}{FoodRescue --- Smart Food Rescue and Redistribution System}
+
+\vspace{0.80cm}
+
+% STUDENT INFORMATION
+% \sectiontitle{Student/Team Information}
+
+% \vspace{0.40cm}
+
+% \begin{tabularx}{\textwidth}{
+% |>{\raggedright\arraybackslash}p{0.66\textwidth}
+% |>{\raggedright\arraybackslash}X|
+% }
+% \hline
+
+% \parbox[t][1.15cm][t]{\linewidth}{
+% \vspace{4pt}
+% \fontsize{10.5}{13}\selectfont
+% Team Name:\\[2pt]
+% Team \# (Mentor needs to assign)
+% }
+% &
+% \\
+% \hline
+
+% \parbox[t][3.65cm][t]{\linewidth}{
+% \vspace{5pt}
+% \fontsize{10.5}{13}\selectfont
+% Team member 1 (Team Lead)\\[3pt]
+% {\color{InstructionGrey}
+% (Last Name, name: student ID: email, picture):}
+% }
+% &
+% \\
+% \hline
+
+% \parbox[t][3.65cm][t]{\linewidth}{
+% \vspace{5pt}
+% \fontsize{10.5}{13}\selectfont
+% Team member 2\\[3pt]
+% {\color{InstructionGrey}
+% (Last Name, name: student ID: email, picture):}
+% }
+% &
+% \\
+% \hline
+
+% \end{tabularx}
+
+\newpage
+\noindent
+\begin{tabularx}{\textwidth}{|>{\RaggedRight\arraybackslash}p{0.69\textwidth}|>{\RaggedRight\arraybackslash}X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textit{Team Name:}\\[-1mm]
+\textit{Team \#}
+\vspace{1.5mm}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textit{Avengers}
+\vspace{1.5mm}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 1 (Team Lead)}\\[-1mm]
+\textit{(Last Name, name: student ID: email, picture):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Dutta, Aditya -- 2510373905}\\
+\textit{2510373905@geu.ac.in}
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{member1.png}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 2}\\[-1mm]
+\textit{(Last Name, name: student ID: email, picture):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Bajoria, Utsav -- 2510370581}\\
+\textit{2510370581@geu.ac.in}
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{member2.png}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 3}\\[-1mm]
+\textit{(Last Name, name: student ID: email, picture):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Singh, Vishwajeet -- 2510380298}\\
+\textit{2510380298@geu.ac.in}
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{member3.png}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 4}\\[-1mm]
+\textit{(Last Name, name: student ID: email, picture):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Pandey, Raghav -- 2510380113}\\
+\textit{2510380113@geu.ac.in}
+
+\vspace{2mm}
+ \includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{member4.png}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+
+\newpage
+% ============================================================
+% PAGE 2
+% ============================================================
+
+\vspace*{0.15cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.18cm}
+    {\color{GEUYellow}
+    \fontsize{17}{21}\selectfont
+    \bfseries
+    PHASE-II PROJECT PROGRESS DESCRIPTION}
+    \vspace{0.18cm}
+}}
+
+\vspace{0.70cm}
+
+% PROJECT ABSTRACT
+\sectiontitle{Project Abstract }
+
+\vspace{0.05cm}
+
+
+\vspace{0.12cm}
+
+\answerbox{4.25cm}{FoodRescue is a smart food rescue and redistribution system designed to connect sources of surplus food, such as restaurants, hostels, households, and events, with NGOs and people in need. It addresses the problem of edible food being wasted while people and support organisations may face shortages. The system records donors food donations, NGOs requirements volunteers and deliveries. It aims to prioritize donations using expiry urgency quantity requirements and distance. A priority queue can order urgent donations hash tables support quick record lookup and a graph with Dijkstra's algorithm helps find suitable delivery routes. The planned solution uses C++ with object-oriented programming and data structures alongside a web interface using HTML CSS and JavaScript. Records are planned to be stored in CSV or text files.}
+
+\vspace{0.90cm}
+
+% UPDATED PROJECT APPROACH
+\sectiontitle{Updated Project Approach and Architecture }
+
+\vspace{0.05cm}
+
+\vspace{0.25cm}
+
+\answerbox{7.25cm}{The system is organized into four modules implemented in C++ using OOP and DSA.\\[2pt]
+\textbf{Member 1 --- Donor \& Food Donation Module:} \texttt{Donor} and \texttt{FoodDonation} classes; add update and delete donations; food expiry and availability handling; hashing for donor/donation lookup.\\[2pt]
+\textbf{Member 2 --- NGO \& Requirement Module:} \texttt{NGO} and \texttt{Requirement} classes; NGO registration/login; management of food requirements; a queue for pending food requests; matching available donations with requirements.\\[2pt]
+\textbf{Member 3 --- Volunteer \& Delivery Module:} \texttt{Volunteer} and \texttt{Delivery} classes; volunteer assignment; delivery status tracking; queue/priority queue for deliveries; delivery history.\\[2pt]
+\textbf{Member 4 --- Core DSA Integration \& UI:} priority queue for urgent/expiring food; searching and sorting algorithms; overall system integration; menu-driven interface; testing and final documentation.\\[2pt]
+The planned architecture also uses a graph and Dijkstra's algorithm for route planning with CSV/text files for storage. HTML CSS and JavaScript are planned for the web interface. The reference proposal does not specify a communication protocol or database server.}
+
+\newpage
+
+% ============================================================
+% PAGE 3
+% ============================================================
+
+\vspace*{0.20cm}
+
+% TASKS COMPLETED
+\sectiontitle{Tasks Completed }
+
+\vspace{0.05cm}
+
+\vspace{0.20cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}X
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+\textbf{Task Completed} &
+\textbf{Team Member}\\
+\hline
+
+\parbox[t][3.25cm][t]{\linewidth}{Donor management OOP classes: created the donor-related class structure and operations for managing donor details.}
+&
+\parbox[t][3.25cm][t]{\linewidth}{Raghav Pandey}
+\\
+\hline
+\parbox[t][3.25cm][t]{\linewidth}{NGO management OOP classes: developed the class structure for NGO information and management.}
+&
+\parbox[t][3.25cm][t]{\linewidth}{Vishwajeet Singh}
+\\
+\hline
+\parbox[t][3.25cm][t]{\linewidth}{Food delivery management OOP classes: developed the class structure for managing food delivery information and operations.}
+&
+\parbox[t][3.25cm][t]{\linewidth}{Utsav Bajoria}
+\\
+\hline
+\parbox[t][3.25cm][t]{\linewidth}{Matching algorithm and priority queue: worked on the logic for matching food donations and prioritizing urgent donations.}
+&
+\parbox[t][3.25cm][t]{\linewidth}{Aditya Dutta}
+\\
+\hline
+\end{tabularx}
+
+\vspace{0.95cm}
+
+% CHALLENGES
+\sectiontitle{Challenges/Roadblocks }
+
+\vspace{0.05cm}
+
+
+\vspace{0.18cm}
+
+\answerbox{4.45cm}{A key challenge is matching food donations with NGO requirements while considering expiry time quantity and distance together. This will be addressed by maintaining accurate donation and requirement records and using a priority score or priority queue to process urgent donations first. Another challenge is validating expiry and availability so that expired or unavailable food is not offered for redistribution. Route planning depends on representing locations and roads correctly so a predefined graph will be used for the initial version and Dijkstra's algorithm will calculate routes. The team must also coordinate modules without duplicating or losing records. Clear class responsibilities module-level tests and end-to-end tests using sample records will help address these issues. Real-time GPS live maps and food-safety certification are outside the initial scope stated in the proposal.}
+
+\vspace{15.05cm}
+
+\newpage
+
+\vspace*{0.30cm}
+
+% TASKS PENDING
+\sectiontitle{Tasks Pending }
+
+\vspace{0.05cm}
+
+\vspace{0.30cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}X
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+
+\textbf{Task Pending} &
+\textbf{Team Member (to complete the task)}
+\\
+\hline
+
+\parbox[t][1.75cm][t]{\linewidth}{Implement hashing for fast donor and food-donation lookup.}
+&
+\parbox[t][1.75cm][t]{\linewidth}{Raghav Pandey}
+\\
+\hline
+\parbox[t][1.75cm][t]{\linewidth}{Implement a queue to manage pending food requests.}
+&
+\parbox[t][1.75cm][t]{\linewidth}{Vishwajeet Singh}
+\\
+\hline
+\parbox[t][1.75cm][t]{\linewidth}{Implement a priority queue to manage and prioritize food deliveries.}
+&
+\parbox[t][1.75cm][t]{\linewidth}{Utsav Bajoria}
+\\
+\hline
+\parbox[t][1.75cm][t]{\linewidth}{Complete front-end integration with the application modules and connect the user interface to the system.}
+&
+\parbox[t][1.75cm][t]{\linewidth}{Aditya Dutta}
+\\
+\hline
+
+\end{tabularx}
+
+\vspace*{1.30cm}
+
+% PROJECT OUTCOME
+\sectiontitle{Project Outcome/Deliverables }
+
+\vspace{0.05cm}
+
+\vspace{0.5cm}
+
+\answerbox{3.25cm}{The planned output is a usable FoodRescue program that connects donors of excess-food with NGOs and enables redistribution. It is expected to have donor NGO food donation requirement volunteer and delivery management, priority based donation selection, donor–NGO matching route planning by a graph and Dijkstra's algorithm delivery tracking and CSV/text-file record storage. They plan to use HTML CSS and JavaScript for a web front end. The C++ source code documentation test results and a final demonstration are additional deliverables. .}
+
+\vspace{0.75cm}
+
+% PROGRESS OVERVIEW
+\sectiontitle{Progress Overview }
+
+\vspace{0.05cm}
+
+\vspace{0.25cm}
+
+\answerbox{4.0cm}{The project proposal outlines the problem statement target users main classes proposed data structures algorithms storage method and expected deliverables. The reference proposal does not provide a verified percentage of implementation or detailed status for individual modules so a reliable percentage of completion cannot be given. The main work left is the implementation and the integration of the planned modules validate expiry and availability checks complete priority based matching and route planning test file based storage and connect the interface with the application logic. The team should update this section with the current code and actual test results. }
+
+\newpage
+
+% ============================================================
+% PAGE 5
+% ============================================================
+
+\vspace*{0.20cm}
+
+% CODEBASE
+\sectiontitle{Codebase Information }
+
+\vspace{0.05cm}
+
+\vspace{0.20cm}
+
+\answerbox{3.7cm}{Repository link: https://github.com/duttta11/FOOD-RESCUE\\[4pt]Branch: Main.\\[4pt]Important commits: DONOR.h, NGO\_FINAL.h, FoodDonation DeliverySystem.h, PriorityQueue.h, 
+UrgencyManager.h.\\[4pt]The project is planned in C++ using OOP and DSA with HTML CSS and JavaScript for the web interface. Add the actual repository URL active branch and key commit details before submission.}
+
+\vspace{0.65cm}
+
+% TESTING
+\sectiontitle{Testing and Validation Status }
+
+\vspace{0.05cm}
+
+
+\vspace{0.30cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}p{0.34\textwidth}
+|>{\raggedright\arraybackslash}p{0.31\textwidth}
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+
+\textbf{Test Type} &
+\textbf{Status (Pass/Fail)} &
+\textbf{Notes}
+\\
+\hline
+
+\parbox[t][1.20cm][t]{\linewidth}{Donor and donation record operations}
+&
+\parbox[t][1.20cm][t]{\linewidth}{Pass}
+&
+\parbox[t][1.20cm][t]{\linewidth}{Test add update delete and lookup operations.}
+\\
+\hline
+\parbox[t][1.20cm][t]{\linewidth}{Expiry and availability validation}
+&
+\parbox[t][1.20cm][t]{\linewidth}{Pass}
+&
+\parbox[t][1.20cm][t]{\linewidth}{Confirm expired or unavailable food.}
+\\
+\hline
+\parbox[t][1.4cm][t]{\linewidth}{Matching NGO and donor.}
+&
+\parbox[t][1.20cm][t]{\linewidth}{Pass}
+&
+\parbox[t][1.20cm][t]{\linewidth}{Test priority ordering and  matching algorithm.}
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{0.65cm}
+
+% DELIVERABLES PROGRESS
+\sectiontitle{Deliverables Progress }
+
+\vspace{0.05cm}
+
+\vspace{0.25cm}
+
+\answerbox{3cm}{Problem definition proposal and high-level architecture: defined in the reference proposal. Donor and food-donation module: implementation status is not provided. NGO requirement and volunteer management: status is not provided. Priority-based donation matching and graph-based route planning: planned; completion is not verified. Delivery tracking CSV/text-file storage and web interface: planned; completion is not verified. Testing documentation and final demonstration: pending or status is not provided.}
+\end{document}
