@@ -1,0 +1,956 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+
+% ============================================================
+% COLORS - SAME AS PHASE-I
+% ============================================================
+\definecolor{GEUBlue}{RGB}{20,55,105}
+\definecolor{GEULightBlue}{RGB}{238,244,251}
+\definecolor{GEUGrey}{RGB}{90,90,90}
+\definecolor{GEULightGrey}{RGB}{245,246,248}
+
+% ============================================================
+% BEAMER SETTINGS
+% ============================================================
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=GEUBlue}
+\setbeamercolor{structure}{fg=GEUBlue}
+\setbeamercolor{block title}{fg=GEUBlue,bg=GEULightBlue}
+\setbeamercolor{block body}{fg=black,bg=GEULightBlue}
+
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+
+% ============================================================
+% LOGO  (upload Graphic Era logo as graphicera_logo.png;
+% if the file is missing the slides still compile without it)
+% ============================================================
+\newcommand{\GEULogo}[1]{%
+  \IfFileExists{graphicera_logo.png}{\includegraphics[height=#1]{graphicera_logo.png}}{}%
+}
+
+% ============================================================
+% HEADER
+% ============================================================
+\setbeamertemplate{headline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+        anchor=north east,
+        xshift=-0.30cm,
+        yshift=-0.12cm
+    ] at (current page.north east)
+    {\GEULogo{0.62cm}};
+  \end{tikzpicture}
+  \vspace{0.72cm}
+}
+
+% ============================================================
+% FRAME TITLE
+% ============================================================
+\setbeamertemplate{frametitle}{%
+  \vspace{0.03cm}
+  \insertframetitle\par
+  \vspace{0.04cm}
+  \textcolor{GEUBlue}{\rule{\textwidth}{0.9pt}}
+  \vspace{0.03cm}
+}
+
+% ============================================================
+% FOOTER
+% ============================================================
+\setbeamertemplate{footline}{%
+  \leavevmode
+  \hbox{%
+  \begin{beamercolorbox}[
+      wd=.82\paperwidth,
+      ht=0.32cm,
+      dp=0.10cm,
+      leftskip=.3cm
+  ]{author in head/foot}
+    \tiny Department of Computer Science \& Engineering |
+    Graphic Era (Deemed to be University)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[
+      wd=.18\paperwidth,
+      ht=0.32cm,
+      dp=0.10cm,
+      rightskip=.3cm
+  ]{date in head/foot}
+    \hfill\tiny\insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+
+% ============================================================
+% CUSTOM COMMANDS
+% ============================================================
+\newcommand{\smallnote}[1]{%
+\vspace{0.08cm}
+{\scriptsize\color{GEUGrey}#1}
+}
+
+% \placeholder = details NOT available in Phase-I / Phase-II / report.
+% Fill these in yourself.
+\newcommand{\placeholder}[1]{%
+\textit{\color{GEUGrey}#1}
+}
+
+% ============================================================
+% DOCUMENT INFORMATION
+% ============================================================
+\title{\textbf{Project-Based Learning}\\[2mm]\large Phase-III Evaluation}
+
+\author{
+\textbf{FoodRescue -- Smart Food Rescue and Redistribution System}\\
+Team ID: DSCPP-III-2026-T381
+}
+
+\institute{
+Department of Computer Science \& Engineering\\
+Graphic Era (Deemed to be University), Dehradun
+}
+
+\date{Academic Session 2026--27}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+% ============================================================
+% SLIDE 1
+% ============================================================
+\begin{frame}[plain]
+
+\begin{tikzpicture}[remember picture,overlay]
+
+\draw[GEUBlue,line width=3pt]
+(current page.north west) -- (current page.north east);
+
+\node[
+    anchor=north east,
+    xshift=-0.45cm,
+    yshift=-0.35cm
+] at (current page.north east)
+{\GEULogo{1.0cm}};
+
+\node[
+    align=center,
+    text width=.84\paperwidth
+] at ([yshift=.25cm]current page.center)
+{
+{\color{GEUBlue}
+\fontsize{26}{30}\selectfont
+\bfseries PROJECT-BASED LEARNING}
+\\[3mm]
+
+{\fontsize{18}{22}\selectfont
+PHASE-III FINAL EVALUATION}
+\\[7mm]
+
+{\color{GEUGrey}
+\Large\bfseries
+FOOD RESCUE}
+\\[1mm]
+{\color{GEUGrey}
+\normalsize\bfseries
+Smart Food Rescue and Redistribution System}
+\\[3mm]
+
+{\color{GEUBlue}
+\normalsize Team ID: DSCPP-III-2026-T381}
+};
+
+\node[
+    align=center,
+    anchor=south,
+    yshift=.42cm
+] at (current page.south)
+{
+\bfseries
+Department of Computer Science \& Engineering\\
+Graphic Era (Deemed to be University), Dehradun\\[-1mm]
+\scriptsize Academic Session 2026--27
+};
+
+\end{tikzpicture}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 2
+% ============================================================
+\begin{frame}{Team \& Mentor Details}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.48\textwidth}
+
+\begin{block}{Team Information}
+\begin{tabular}{@{}ll@{}}
+\textbf{Team ID:} & DSCPP-III-2026-T381\\
+\textbf{Semester:} & 3rd\\
+\textbf{Section:} & ML2, ML3, DS1, ML4\\
+\textbf{Domain:} & Social Impact
+\end{tabular}
+\end{block}
+
+\column{.48\textwidth}
+
+\begin{block}{Team Members}
+1.\quad Aditya Dutta (Lead) -- 2510373905\\
+2.\quad Utsav Bajoria -- 2510370581\\
+3.\quad Vishwajeet Singh -- 2510380298\\
+4.\quad Raghav Pandey -- 2510380113
+\end{block}
+
+\end{columns}
+
+\vspace{2mm}
+
+\begin{block}{Mentor}
+Mr. Chirag Tyagi
+\hfill
+\textbf{Interactions:} 8
+\end{block}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 3
+% ============================================================
+\begin{frame}{Project Abstract \& Problem Statement}
+\scriptsize
+
+\begin{block}{Project Abstract}
+FoodRescue is a C++ (OOP + DSA) system that connects surplus-food donors with NGOs and manages
+redistribution: donor/NGO/volunteer management, priority-based donation selection and matching,
+Dijkstra-based route planning, delivery tracking and file-based storage, with a menu-driven
+console interface.
+\end{block}
+
+\vspace{0.5mm}
+
+\begin{block}{Problem Statement}
+Restaurants, hostels, households, and events often generate surplus food that is
+still safe to consume, while NGOs and people in need may face shortages. Without
+proper coordination, usable food goes to waste. FoodRescue connects donors with
+NGOs, prioritizing by expiry, quantity, and distance.
+\end{block}
+
+\vspace{0.5mm}
+
+\textbf{\color{GEUBlue}Target Users / Application}
+
+\begin{itemize}\itemsep2pt
+    \item Donors (restaurants, hostels, households, events), NGOs / people in need, volunteers
+    \item Application environment: local desktop system used by NGO / donor coordinators
+    \item Benefit: less food wastage; surplus meals reach people in need
+\end{itemize}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 4
+% ============================================================
+\begin{frame}{Objectives \& Final Deliverables}
+\small
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Finalized Objectives}
+
+\begin{enumerate}\itemsep3pt
+    \item Reduce food wastage by connecting food donors with NGOs and volunteers.
+    \item Match surplus food with NGO requirements by food type, quantity, and location.
+    \item Prioritize eligible donations based on expiry time and urgency.
+    \item Support efficient pickup and delivery route planning using graph algorithms.
+\end{enumerate}
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Final Deliverables}
+
+\begin{itemize}\itemsep3pt
+    \item Working C++ prototype (donor, NGO, volunteer, delivery management)
+    \item Complete C++ source code
+    \item File-based CSV / text records
+    \item Documentation
+    \item Final working demonstration
+    \item Menu-driven console interface for donors, NGOs and volunteers
+\end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 5
+% ============================================================
+\begin{frame}{Phase-I \& Phase-II Feedback Incorporated}
+
+\scriptsize
+
+\begin{center}
+
+\renewcommand{\arraystretch}{1.35}
+
+\begin{tabularx}{.96\textwidth}
+{@{}p{2.1cm}X X@{}}
+
+\toprule
+\textbf{Phase} &
+\textbf{Feedback / Suggestion} &
+\textbf{Action Taken}\\
+\midrule
+
+Phase-I &
+Improve donation prioritization. &
+Designed priority selection based on expiry and urgency.\\
+
+Phase-I &
+Improve coordination between NGOs and donors. &
+Planned requirement-based donation matching.\\
+
+Phase-I &
+Make delivery planning more efficient. &
+Included distance-based route planning.\\
+
+Phase-II &
+Test delivery assignment (delivery ID mismatch found: 401 created, 501 searched). &
+Corrected the delivery ID used in search and re-tested volunteer assignment.\\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+\vfill
+
+\begin{block}{Final Improvement}
+The project moved from a planned design to an integrated working prototype with
+priority-based selection, requirement-based matching, Dijkstra route planning and delivery tracking.
+\end{block}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 6
+% ============================================================
+\begin{frame}{Final System Architecture}
+\footnotesize
+
+\begin{center}
+
+\begin{tikzpicture}[
+node distance=5mm,
+box/.style={
+rectangle,
+rounded corners,
+draw=GEUBlue,
+fill=GEULightBlue,
+minimum width=1.9cm,inner sep=2pt,
+minimum height=9mm,
+align=center,
+font=\footnotesize
+},
+arrow/.style={
+-{Latex[length=2mm]},
+thick,
+draw=GEUBlue
+}
+]
+
+\node[box] (a) {User Interface\\Donor / NGO /\\Volunteer};
+\node[box,right=of a] (b) {Application\\Layer};
+\node[box,right=of b] (c) {DSA Matching \&\\Optimization};
+\node[box,right=of c] (d) {Data Mgmt\\Layer};
+\node[box,right=of d] (e) {File Storage\\CSV / Text};
+
+\draw[arrow] (a)--(b);
+\draw[arrow] (b)--(c);
+\draw[arrow] (c)--(d);
+\draw[arrow] (d)--(e);
+
+\end{tikzpicture}
+
+\end{center}
+
+\vspace{4mm}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Major Components}
+
+\begin{itemize}\itemsep2pt
+    \item UI layer for donors, NGOs, and volunteers
+    \item Logic engine for constraint checking and donation allocation
+    \item Record management for donations, users, and deliveries
+    \item Priority queue, queue, hash table, graph and matching
+\end{itemize}
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}System Flow}
+
+\begin{itemize}\itemsep2pt
+    \item Donor lists a food donation (type, qty, expiry, location)
+    \item Engine ranks by urgency, matches to a suitable NGO, routes via Dijkstra's algorithm
+    \item Volunteer assigned; delivery tracked to storage
+\end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 7
+% ============================================================
+\begin{frame}{Final Technology Stack}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.48\textwidth}
+
+\begin{block}{Software / Technologies}
+\begin{itemize}\itemsep2pt
+    \item Programming: C++ (STL, OOP, DSA)
+    \item Framework: Standard Template Library (STL)
+    \item Database: File-based CSV / text records
+    \item Libraries/APIs: C++ STL
+    \item OS/Platform: Desktop (Windows / Linux), console application
+\end{itemize}
+\end{block}
+
+\column{.48\textwidth}
+
+\begin{block}{Development Infrastructure}
+\begin{itemize}\itemsep2pt
+    \item IDE: VS Code / Code::Blocks
+    \item Version Control: Git/GitHub
+    \item Testing: manual test cases with console output
+    \item Deployment: runs locally (compiled C++ program)
+\end{itemize}
+\end{block}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 8
+% ============================================================
+\begin{frame}{Implementation of PBL Course Concepts}
+
+\scriptsize
+
+\begin{center}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{tabularx}{.96\textwidth}
+{@{}>{\bfseries}p{2.8cm}X p{2.8cm}@{}}
+
+\toprule
+Course & Concepts Actually Implemented & Project Module\\
+\midrule
+
+Data Structures in C &
+Priority queue for urgent donations; queue for NGO requests; hash table
+for donor/NGO/volunteer lookup; graph and Dijkstra's algorithm for
+delivery routes. &
+DSA-based matching and optimization\\
+
+OOPs with C++ &
+Classes for Donor, FoodDonation, NGO, Volunteer, Requirement and Delivery;
+STL containers; file handling. &
+Application and data-management layer\\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 9
+% ============================================================
+\begin{frame}{Module-Wise Final Implementation}
+
+\scriptsize
+
+\begin{center}
+
+\renewcommand{\arraystretch}{1.35}
+
+\begin{tabularx}{.96\textwidth}
+{@{}p{2.4cm}X p{2.0cm}p{2.0cm}@{}}
+
+\toprule
+\textbf{Module} &
+\textbf{Implementation} &
+\textbf{Responsible} &
+\textbf{Status}\\
+\midrule
+
+Core DSA, Integration \& UI &
+Core data structures, integration and UI &
+Aditya Dutta &
+Completed\\
+
+Volunteer \& Delivery &
+Volunteer records, pickup assignment and delivery tracking &
+Utsav Bajoria &
+Completed\\
+
+NGO \& Requirement &
+NGO requirement records, donation matching and validation of matching cases &
+Vishwajeet Singh &
+Completed\\
+
+Donor \& Food Donation &
+Donor records and food donation entry &
+Raghav Pandey &
+Completed\\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+\vspace{4mm}
+
+\begin{center}
+\colorbox{GEULightBlue}{
+\parbox{.65\textwidth}{
+\centering
+\textbf{Final Project Completion:}
+100\%
+}}
+\end{center}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 10
+% ============================================================
+\begin{frame}{Working System / Prototype Demonstration}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.43\textwidth}
+
+\textbf{\color{GEUBlue}Major Working Features}
+
+\begin{itemize}\itemsep3pt
+    \item Food donation entry and record management
+    \item NGO requirement registration and matching
+    \item Priority-based donation selection
+    \item Volunteer assignment / route planning
+    \item Delivery tracking
+\end{itemize}
+
+\column{.53\textwidth}
+
+\begin{block}{Sample Console Run}
+
+\scriptsize\ttfamily
+Select donor: 1 (Raghav, ID 101)\\
+Enter Donation ID: 1\\
+Enter Food Name: rice\\
+Enter Quantity: 20\\
+Enter Expiry Date: 12-12-2026\\
+Donation added successfully.\\
+Food task added to urgent queue.\\
+Automatic priority assigned: 4
+\end{block}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 11
+% ============================================================
+\begin{frame}{Data / Database / Backend Implementation}
+\footnotesize
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Data / Database}
+
+\begin{itemize}\itemsep3pt
+    \item Data source: file-based CSV / text records
+    \item Entities: Donors, Food, NGOs, Volunteers, Requirements, Deliveries
+    \item Storage / retrieval: file handling with hash-table lookup
+    \item Fields: donation ID, food name, quantity, expiry date, donor
+    \item Validation: ID, quantity and expiry-date checks on entry
+\end{itemize}
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Backend / Core Logic}
+
+\begin{itemize}\itemsep3pt
+    \item Core processing: constraint checking and donation allocation
+    \item Algorithm / logic: priority queue (expiry, urgency), queue for NGO requests, graph + Dijkstra's algorithm for routes
+    \item Interface: menu-driven C++ console
+    \item Access: separate menus for donor, NGO and volunteer
+    \item Error handling: ``not found'' checks on ID search
+\end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 12
+% ============================================================
+\begin{frame}{Testing \& Validation}
+\footnotesize
+
+\scriptsize
+
+\begin{center}
+
+\renewcommand{\arraystretch}{1.35}
+
+\begin{tabularx}{.96\textwidth}
+{@{}p{2.0cm}X X p{1.4cm}@{}}
+
+\toprule
+Test Type &
+Expected Result &
+Observed Result &
+Status\\
+\midrule
+
+Donor / volunteer &
+Registered records display. &
+Donor and volunteer records displayed correctly. &
+Pass\\
+
+NGO matching &
+Rice donation (20 units) checked against 20-unit requirement. &
+Requirement shown as fulfilled after matching. &
+Pass\\
+
+Priority queue &
+One queued task is processed (three tasks enqueued, one dequeued). &
+Most urgent task dequeued and processed. &
+Pass\\
+
+Volunteer assignment &
+Volunteer assigned to intended delivery. &
+Assignment works after delivery ID fix. &
+Pass\\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+\vspace{0mm}
+
+\begin{block}{Validation Summary}
+Modules were tested with sample donors, NGOs, volunteers and deliveries through console
+test cases against the objectives (matching, priority, routing, tracking).
+\end{block}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 13
+% ============================================================
+\begin{frame}{Results \& Performance Analysis}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Key Results}
+
+\begin{itemize}\itemsep3pt
+    \item 4 modules integrated into one system
+    \item 6 OOP classes and 4 DSA structures used
+    \item Urgent donations auto-prioritized by expiry
+    \item 35 GitHub commits across all 4 members
+\end{itemize}
+
+\column{.48\textwidth}
+
+\begin{block}{Result Evidence: Sample Run}
+
+\scriptsize
+Donation: rice, quantity 20, expiry 12-12-2026\\
+Requirement: 20 units\\
+Priority assigned automatically: 4\\
+Result: queued as urgent and matched with NGO
+\end{block}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 14
+% ============================================================
+\begin{frame}{GitHub Repository \& Development Evidence}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.45\textwidth}
+
+\textbf{\color{GEUBlue}Repository Details}
+
+\begin{itemize}\itemsep3pt
+    \item Repository: \placeholder{GitHub URL}
+    \item Branch: main
+    \item README.md: Updated
+    \item Contributors: Aditya Dutta, Utsav Bajoria, Vishwajeet Singh, Raghav Pandey
+    \item Documentation: README.md and project proposal
+\end{itemize}
+
+\column{.51\textwidth}
+
+\textbf{\color{GEUBlue}Development Evidence}
+
+\begin{itemize}\itemsep3pt
+    \item Commit history maintained by each member
+    \item Individual work visible in commit history
+    \item Latest tested implementation uploaded
+    \item Complete commit history available on GitHub
+\end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 15
+% ============================================================
+\begin{frame}{Individual Contribution}
+\footnotesize
+
+\scriptsize
+
+\begin{center}
+
+\renewcommand{\arraystretch}{1.35}
+
+\begin{tabularx}{.96\textwidth}
+{@{}p{1.8cm}p{1.8cm}X p{1.5cm}@{}}
+
+\toprule
+Member &
+Role &
+Final Technical Contribution &
+Commits\\
+\midrule
+
+Aditya Dutta &
+Core DSA, Integration \& UI &
+Core data structures, integration and UI &
+15\\
+
+Utsav Bajoria &
+Volunteer \& Delivery &
+Volunteer records, pickup assignment and delivery tracking &
+7\\
+
+Vishwajeet Singh &
+NGO \& Requirement &
+NGO requirement records and donation-matching work &
+6\\
+
+Raghav Pandey &
+Donor \& Food Donation &
+Donor records and food donation entry &
+7\\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+\vspace{3mm}
+
+\begin{block}{Individual Evaluation}
+Every member must be able to explain, demonstrate and defend
+their individual technical contribution.
+\end{block}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 16
+% ============================================================
+\begin{frame}{Challenges, Limitations \& Lessons Learned}
+\scriptsize
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Challenges \& Solutions}
+
+\begin{itemize}\itemsep3pt
+    \item Suitable donation-to-NGO matching -- modular design, suitable data structures and test cases
+    \item Coordinating interfaces and records across modules -- modular, layered architecture
+    \item Maintaining correct priority and delivery records -- test cases
+\end{itemize}
+
+\vspace{2mm}
+
+\textbf{\color{GEUBlue}Current Limitations}
+
+\begin{itemize}\itemsep2pt
+    \item No live GPS tracking or real-time map integration
+    \item Predefined road nodes/edges; file-based storage; no food-safety certification
+\end{itemize}
+
+\column{.48\textwidth}
+
+\textbf{\color{GEUBlue}Technical Learning}
+
+\begin{itemize}\itemsep3pt
+    \item Applying DSA and OOP concepts to a practical social-impact problem
+    \item Using priority queue, hash table and graph together
+    \item Designing classes for real entities and file handling
+\end{itemize}
+
+\vspace{2mm}
+
+\textbf{\color{GEUBlue}Team Learning}
+
+\begin{itemize}\itemsep2pt
+    \item Splitting work by module and merging through GitHub
+    \item Debugging cross-module issues such as the ID mismatch
+\end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 17
+% ============================================================
+\begin{frame}{Final Outcomes, Applications \& Future Scope}
+\footnotesize
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.32\textwidth}
+
+\textbf{\color{GEUBlue}Final Outcomes}
+
+\begin{itemize}\itemsep3pt
+    \item Integrated working food-rescue prototype
+    \item Validated donation matching and route-planning results
+    \item Automated priority-based matching
+\end{itemize}
+
+\column{.32\textwidth}
+
+\textbf{\color{GEUBlue}Applications}
+
+\begin{itemize}\itemsep3pt
+    \item Use by donors (restaurants, hostels, households, events)
+    \item Use by NGOs and people in need
+    \item Use by delivery volunteers
+\end{itemize}
+
+\column{.32\textwidth}
+
+\textbf{\color{GEUBlue}Future Scope}
+
+\begin{itemize}\itemsep3pt
+    \item Live maps and persistent databases
+    \item Web front-end (HTML, CSS, JavaScript)
+    \item Serving multiple cities and NGOs
+\end{itemize}
+
+\end{columns}
+
+\vspace{5mm}
+
+\begin{block}{Tangible Project Outcome}
+Working C++ prototype with source code, CSV / text records, documentation and a final demonstration.
+\end{block}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 18
+% ============================================================
+\begin{frame}{References \& Project Resources}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\column{.53\textwidth}
+
+\textbf{\color{GEUBlue}References}
+
+\begin{enumerate}\itemsep3pt
+    \item Cormen, Leiserson, Rivest and Stein -- \textit{Introduction to Algorithms}
+    \item Balagurusamy, E. -- \textit{Object-Oriented Programming with C++}
+    \item C++ Standard Template Library (STL) documentation
+    \item Course material and lecture notes on Data Structures and OOP
+\end{enumerate}
+
+\column{.43\textwidth}
+
+\textbf{\color{GEUBlue}Project Resources}
+
+\begin{itemize}\itemsep3pt
+    \item GitHub: \placeholder{URL}
+    \item Demo: live demonstration
+    \item Dataset: CSV / text files
+    \item Documentation: README, proposal
+\end{itemize}
+
+\vfill
+
+\begin{center}
+
+\colorbox{GEUBlue}{
+\parbox{.82\textwidth}{
+\centering
+\color{white}
+\Large\textbf{Thank You}\\[1mm]
+\normalsize Questions \& Discussion
+}}
+
+\end{center}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}
