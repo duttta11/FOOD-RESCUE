@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodRescue — Private Food Donation & Smart Delivery Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= APP CONTAINER ================= -->
+    <div id="appContainer">
+
+        <!-- ================= 1. PUBLIC LANDING PAGE ================= -->
+        <div id="landingView" class="view-section active">
+
+            <!-- Navigation -->
+            <header class="navbar">
+                <div class="nav-container">
+                    <a href="#" class="brand-logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                        <div class="logo-icon">🍃</div>
+                        <div class="logo-text">Food<span>Rescue</span></div>
+                    </a>
+
+                    <nav class="nav-links">
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#benefits">Benefits</a>
+                        <a href="#smart-matching">Private Matching</a>
+                        <a href="#about">About</a>
+                    </nav>
+
+                    <div class="nav-actions">
+                        <button class="btn btn-outline" onclick="openAuthModal('donor', 'login')">Donor Login</button>
+                        <button class="btn btn-outline" onclick="openAuthModal('ngo', 'login')">NGO Login</button>
+                        <button class="btn btn-primary" onclick="openAuthModal('donor', 'register')">Donate Food</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-container">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Internal Algorithmic Matching & Dijkstra Logistics
+                    </div>
+
+                    <h1 class="hero-title">
+                        Turn Surplus Food Into <span class="gradient-text">Someone's Hope.</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        A private food donation and delivery platform connecting restaurants, caterers, and food donors directly with verified NGOs. Powered by high-speed C++ algorithmic matching and Dijkstra shortest-path volunteer dispatch.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <button class="btn btn-primary btn-lg" onclick="openAuthModal('donor', 'register')">
+                            <span class="btn-icon">🍲</span> Donate Surplus Food
+                        </button>
+                        <button class="btn btn-secondary btn-lg" onclick="openAuthModal('ngo', 'register')">
+                            <span class="btn-icon">🏢</span> Request Food For NGO
+                        </button>
+                    </div>
+
+                    <div class="hero-trust-notice">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <strong>100% Private & Protected:</strong> Donors and NGOs never browse each other's directories. All matching and delivery assignments are calculated internally.
+                    </div>
+
+                    <!-- Platform Impact Counter Strip -->
+                    <div class="stats-strip">
+                        <div class="stat-item">
+                            <div class="stat-number" id="landingMealsCount">1,450+</div>
+                            <div class="stat-label">Meals Rescued</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="landingDonorsCount">48+</div>
+                            <div class="stat-label">Registered Donors</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="landingNgosCount">26+</div>
+                            <div class="stat-label">Partner Shelters & NGOs</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="landingDeliveriesCount">120+</div>
+                            <div class="stat-label">Deliveries Completed</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="section bg-light">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <div class="section-tag">Logistics Workflow</div>
+                        <h2 class="section-title">How FoodRescue Works</h2>
+                        <p class="section-desc">Modeled after modern on-demand delivery logistics, tailored for private zero-waste food rescue.</p>
+                    </div>
+
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">01</div>
+                            <div class="step-icon-wrapper">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                            </div>
+                            <h3>Post Surplus Food</h3>
+                            <p>Donors quickly register excess cooked meals, baked goods, or grocery staples with quantity and expiry timeline.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">02</div>
+                            <div class="step-icon-wrapper">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>
+                            </div>
+                            <h3>Private Matching</h3>
+                            <p>Our internal C++ matching engine automatically pairs available donations with verified NGO requirements based on food type and urgency.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">03</div>
+                            <div class="step-icon-wrapper">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="3"/><circle cx="17" cy="19" r="3"/><path d="M17 19h4a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1"/><path d="M17 5v4h4"/></svg>
+                            </div>
+                            <h3>Dijkstra Route & Dispatch</h3>
+                            <p>The system calculates the optimal shortest road path using Dijkstra's algorithm and automatically dispatches an available volunteer.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">04</div>
+                            <div class="step-icon-wrapper">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <h3>Live Tracking & Delivery</h3>
+                            <p>Both donor and NGO track the rescue mission through 4 distinct stages: Assigned, Picked Up, In Transit, and Safely Delivered.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section id="benefits" class="section">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <div class="section-tag">Value Proposition</div>
+                        <h2 class="section-title">Built for Real-World Impact</h2>
+                        <p class="section-desc">Tailored tools for donors and relief organizations without the noise of public directories.</p>
+                    </div>
+
+                    <div class="benefits-dual-grid">
+                        <!-- Donor Column -->
+                        <div class="benefit-box donor-benefit">
+                            <div class="benefit-badge">For Food Donors</div>
+                            <h3>Restaurants, Caterers, Hotels & Households</h3>
+                            <ul class="benefit-list">
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Zero Food Waste:</strong> Effortlessly redirect clean excess food to vulnerable communities.</div>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Zero Hassle Logistics:</strong> System volunteers pick up food directly from your door.</div>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Guaranteed Privacy:</strong> Your donor profile and contact details are kept private and secure.</div>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Real-Time Delivery Visibility:</strong> Track your food until it feeds those in need.</div>
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="openAuthModal('donor', 'register')">Start Donating Today</button>
+                        </div>
+
+                        <!-- NGO Column -->
+                        <div class="benefit-box ngo-benefit">
+                            <div class="benefit-badge">For Verified NGOs</div>
+                            <h3>Shelters, Orphanages & Community Kitchens</h3>
+                            <ul class="benefit-list">
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Urgency-Driven Priority:</strong> Critical requirements get prioritized dynamically in our queue.</div>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Predictable Meal Influx:</strong> Receive matched quantities based on your stated receiving capacity.</div>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Volunteer Hand-Off:</strong> Deliveries arrive straight to your shelter location.</div>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <div><strong>Internal Quality & Safety:</strong> Freshness and expiry timelines checked before dispatch.</div>
+                                </li>
+                            </ul>
+                            <button class="btn btn-secondary" onclick="openAuthModal('ngo', 'register')">Join as Partner NGO</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Private Smart Matching Architecture Feature Highlight -->
+            <section id="smart-matching" class="section bg-light">
+                <div class="container">
+                    <div class="feature-card-big">
+                        <div class="feature-content">
+                            <div class="section-tag">Core Technology</div>
+                            <h2>Why Private Matching Matters</h2>
+                            <p>
+                                Unlike public donation boards where uncoordinated donors and NGOs must manually call each other, <strong>FoodRescue acts as an intelligent dispatch coordinator</strong>, exactly like Swiggy or Zomato handles meal dispatch.
+                            </p>
+                            <div class="tech-points">
+                                <div class="tech-point-item">
+                                    <div class="tech-point-icon">⚡</div>
+                                    <div>
+                                        <strong>No Public Browsing:</strong> Donors cannot see other donors' records; NGOs cannot see other NGOs' requests.
+                                    </div>
+                                </div>
+                                <div class="tech-point-item">
+                                    <div class="tech-point-icon">🛣️</div>
+                                    <div>
+                                        <strong>Dijkstra Shortest Path:</strong> Our C++ graph routing engine computes the shortest path along the city road graph to ensure hot food arrives rapidly.
+                                    </div>
+                                </div>
+                                <div class="tech-point-item">
+                                    <div class="tech-point-icon">🔒</div>
+                                    <div>
+                                        <strong>Cryptographic Security:</strong> PBKDF2 password hashing with OpenSSL and server-side token authorization protects every record.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-visual">
+                            <div class="route-simulation-card">
+                                <div class="route-header">
+                                    <span class="status-indicator live"></span>
+                                    <span>Internal C++ Dispatch Active</span>
+                                </div>
+                                <div class="route-nodes">
+                                    <div class="node-point start">
+                                        <div class="node-dot"></div>
+                                        <div>
+                                            <div class="node-role">Donor Pickup</div>
+                                            <div class="node-name">Prem Nagar</div>
+                                        </div>
+                                    </div>
+                                    <div class="route-line-visual">
+                                        <div class="route-truck-icon">🚚</div>
+                                        <span class="route-distance-chip">Dijkstra: 10 km</span>
+                                    </div>
+                                    <div class="node-point end">
+                                        <div class="node-dot"></div>
+                                        <div>
+                                            <div class="node-role">NGO Destination</div>
+                                            <div class="node-name">Clock Tower</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="route-footer">
+                                    <div>Assigned Volunteer: <strong>Aman Sharma</strong></div>
+                                    <span class="badge badge-assigned">Assigned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="container text-center max-w-700">
+                    <div class="section-tag">About FoodRescue</div>
+                    <h2 class="section-title">Bridging Surplus Food and Empty Plates</h2>
+                    <p class="section-desc">
+                        Millions of tons of perfectly edible food are discarded daily while community shelters struggle for nourishment. FoodRescue turns this logistics challenge into an automated rescue network. Built with high-performance C++ backend services and modern frontend technology to serve hope with precision.
+                    </p>
+                    <div class="btn-group-center">
+                        <button class="btn btn-primary" onclick="openAuthModal('donor', 'register')">Get Started as Donor</button>
+                        <button class="btn btn-outline" onclick="openAuthModal('ngo', 'register')">Register as NGO</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-top">
+                        <div class="footer-brand">
+                            <div class="brand-logo">
+                                <div class="logo-icon">🍃</div>
+                                <div class="logo-text">Food<span>Rescue</span></div>
+                            </div>
+                            <p>Private Food Donation & Intelligent Dispatch Platform.</p>
+                        </div>
+                        <div class="footer-links">
+                            <div>
+                                <h4>Platform</h4>
+                                <a href="#how-it-works">How It Works</a>
+                                <a href="#benefits">Benefits</a>
+                                <a href="#smart-matching">Private Matching</a>
+                            </div>
+                            <div>
+                                <h4>Accounts</h4>
+                                <a href="#" onclick="openAuthModal('donor', 'login')">Donor Login</a>
+                                <a href="#" onclick="openAuthModal('donor', 'register')">Donor Register</a>
+                                <a href="#" onclick="openAuthModal('ngo', 'login')">NGO Login</a>
+                                <a href="#" onclick="openAuthModal('ngo', 'register')">NGO Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>© 2026 FoodRescue Platform. All rights reserved. Zero Waste. Pure Impact.</p>
+                        <div class="safety-badge">🔒 End-to-End Private Matching Engine</div>
+                    </div>
+                </div>
+            </footer>
+
+        </div> <!-- /#landingView -->
+
+
+        <!-- ================= 2. DONOR DASHBOARD VIEW ================= -->
+        <div id="donorDashboardView" class="view-section dashboard-layout">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <div class="brand-logo">
+                        <div class="logo-icon">🍃</div>
+                        <div class="logo-text">Food<span>Rescue</span></div>
+                    </div>
+                    <div class="user-role-chip donor-chip">Donor Portal</div>
+                </div>
+
+                <div class="sidebar-user-card">
+                    <div class="avatar donor-avatar" id="donorSidebarInitials">D</div>
+                    <div class="user-info">
+                        <h4 id="donorSidebarName">Donor Name</h4>
+                        <p id="donorSidebarEmail">donor@example.com</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <button class="nav-item active" data-tab="donor-overview" onclick="switchDonorTab('donor-overview')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        Overview
+                    </button>
+                    <button class="nav-item" data-tab="donor-donate" onclick="switchDonorTab('donor-donate')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                        Donate Food
+                    </button>
+                    <button class="nav-item" data-tab="donor-donations" onclick="switchDonorTab('donor-donations')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        My Donations
+                    </button>
+                    <button class="nav-item" data-tab="donor-deliveries" onclick="switchDonorTab('donor-deliveries')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        My Deliveries
+                        <span class="badge badge-pill badge-primary" id="donorDeliveriesCountBadge">0</span>
+                    </button>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <button class="btn btn-outline btn-block" onclick="handleLogout()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        Sign Out
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Dashboard Main Content -->
+            <main class="dashboard-main">
+                <header class="dashboard-topbar">
+                    <div>
+                        <h2 id="donorHeaderGreeting">Welcome back!</h2>
+                        <p class="text-muted">Manage your surplus food donations and delivery dispatches.</p>
+                    </div>
+                    <div class="topbar-actions">
+                        <button class="btn btn-primary" onclick="switchDonorTab('donor-donate')">
+                            + Donate Food
+                        </button>
+                    </div>
+                </header>
+
+                <div class="dashboard-body">
+
+                    <!-- Tab 1: Overview -->
+                    <div id="tab-donor-overview" class="tab-pane active">
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon green">🍲</div>
+                                <div class="metric-data">
+                                    <h3 id="dStatTotalDonations">0</h3>
+                                    <p>Total Donations</p>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon yellow">⏳</div>
+                                <div class="metric-data">
+                                    <h3 id="dStatAvailableDonations">0</h3>
+                                    <p>Available Donations</p>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon blue">🤝</div>
+                                <div class="metric-data">
+                                    <h3 id="dStatMatchedDonations">0</h3>
+                                    <p>Matched Donations</p>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon purple">✅</div>
+                                <div class="metric-data">
+                                    <h3 id="dStatCompletedDeliveries">0</h3>
+                                    <p>Completed Deliveries</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Action Banner -->
+                        <div class="banner-card">
+                            <div class="banner-text">
+                                <h3>Have fresh surplus food right now?</h3>
+                                <p>Submit your donation in 30 seconds. Our internal engine immediately matches nearby NGOs and schedules a volunteer pickup.</p>
+                            </div>
+                            <button class="btn btn-primary" onclick="switchDonorTab('donor-donate')">Create Donation Now</button>
+                        </div>
+
+                        <!-- Active Deliveries Preview -->
+                        <div class="card">
+                            <div class="card-header flex-between">
+                                <h3>Active Deliveries</h3>
+                                <button class="btn btn-link" onclick="switchDonorTab('donor-deliveries')">View All Deliveries →</button>
+                            </div>
+                            <div id="donorActiveDeliveriesPreview">
+                                <p class="empty-text">Loading active deliveries...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Donate Food Form -->
+                    <div id="tab-donor-donate" class="tab-pane">
+                        <div class="card max-w-700">
+                            <div class="card-header">
+                                <h3>Submit Surplus Food Donation</h3>
+                                <p class="text-muted">Fill out the food details. Our backend system matches this with pending NGO requirements internally.</p>
+                            </div>
+
+                            <form id="donateFoodForm" onsubmit="handleCreateDonation(event)">
+                                <div class="form-group">
+                                    <label for="foodName">Food Name / Description *</label>
+                                    <input type="text" id="foodName" class="form-control" placeholder="e.g. Cooked Dal Rice, Fresh Bread, Vegetable Biryani" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="foodQuantity">Quantity (number of meals/servings) *</label>
+                                        <input type="number" id="foodQuantity" class="form-control" min="1" placeholder="e.g. 25" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expiryDate">Best Before / Expiry Date *</label>
+                                        <input type="text" id="expiryDate" class="form-control" placeholder="DD-MM-YYYY (e.g. 25-11-2026)" required>
+                                        <small class="form-hint">Format: DD-MM-YYYY</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pickupAddress">Pickup Location *</label>
+                                    <input type="text" id="pickupAddress" class="form-control" placeholder="Enter pickup address" required>
+                                    <small class="form-hint">Defaults to your registered address. You can update this for this specific pickup.</small>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="btnSubmitDonation">
+                                        Submit Donation for Matching
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: My Donations -->
+                    <div id="tab-donor-donations" class="tab-pane">
+                        <div class="card">
+                            <div class="card-header flex-between">
+                                <div>
+                                    <h3>My Food Donations</h3>
+                                    <p class="text-muted">All surplus food donations submitted from your account.</p>
+                                </div>
+                                <button class="btn btn-sm btn-outline" onclick="loadDonorDonations()">🔄 Refresh</button>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Donation ID</th>
+                                            <th>Food Details</th>
+                                            <th>Quantity</th>
+                                            <th>Expiry Date</th>
+                                            <th>Pickup Location</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="donorDonationsTableBody">
+                                        <tr><td colspan="6" class="text-center">Loading donations...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: My Deliveries -->
+                    <div id="tab-donor-deliveries" class="tab-pane">
+                        <div class="card">
+                            <div class="card-header flex-between">
+                                <div>
+                                    <h3>Delivery Dispatches</h3>
+                                    <p class="text-muted">Matched rescues with assigned volunteers and Dijkstra shortest-path calculations.</p>
+                                </div>
+                                <button class="btn btn-sm btn-outline" onclick="loadDonorDeliveries()">🔄 Refresh</button>
+                            </div>
+
+                            <div id="donorDeliveriesContainer" class="deliveries-card-list">
+                                <p class="empty-text">Loading deliveries...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div> <!-- /#donorDashboardView -->
+
+
+        <!-- ================= 3. NGO DASHBOARD VIEW ================= -->
+        <div id="ngoDashboardView" class="view-section dashboard-layout">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <div class="brand-logo">
+                        <div class="logo-icon">🍃</div>
+                        <div class="logo-text">Food<span>Rescue</span></div>
+                    </div>
+                    <div class="user-role-chip ngo-chip">NGO Portal</div>
+                </div>
+
+                <div class="sidebar-user-card">
+                    <div class="avatar ngo-avatar" id="ngoSidebarInitials">N</div>
+                    <div class="user-info">
+                        <h4 id="ngoSidebarName">NGO Name</h4>
+                        <p id="ngoSidebarEmail">ngo@example.com</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <button class="nav-item active" data-tab="ngo-overview" onclick="switchNgoTab('ngo-overview')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        Overview
+                    </button>
+                    <button class="nav-item" data-tab="ngo-request" onclick="switchNgoTab('ngo-request')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                        Request Food
+                    </button>
+                    <button class="nav-item" data-tab="ngo-requirements" onclick="switchNgoTab('ngo-requirements')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        My Requirements
+                    </button>
+                    <button class="nav-item" data-tab="ngo-deliveries" onclick="switchNgoTab('ngo-deliveries')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        Incoming Deliveries
+                        <span class="badge badge-pill badge-primary" id="ngoDeliveriesCountBadge">0</span>
+                    </button>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <button class="btn btn-outline btn-block" onclick="handleLogout()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        Sign Out
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Dashboard Main Content -->
+            <main class="dashboard-main">
+                <header class="dashboard-topbar">
+                    <div>
+                        <h2 id="ngoHeaderGreeting">Welcome back!</h2>
+                        <p class="text-muted">Manage your relief food requests and track incoming rescue dispatches.</p>
+                    </div>
+                    <div class="topbar-actions">
+                        <button class="btn btn-secondary" onclick="switchNgoTab('ngo-request')">
+                            + Request Food
+                        </button>
+                    </div>
+                </header>
+
+                <div class="dashboard-body">
+
+                    <!-- Tab 1: Overview -->
+                    <div id="tab-ngo-overview" class="tab-pane active">
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon purple">📋</div>
+                                <div class="metric-data">
+                                    <h3 id="nStatTotalRequirements">0</h3>
+                                    <p>Total Requirements</p>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon yellow">⏳</div>
+                                <div class="metric-data">
+                                    <h3 id="nStatPendingRequirements">0</h3>
+                                    <p>Pending Requirements</p>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon green">✨</div>
+                                <div class="metric-data">
+                                    <h3 id="nStatFulfilledRequirements">0</h3>
+                                    <p>Fulfilled Requirements</p>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon blue">🚚</div>
+                                <div class="metric-data">
+                                    <h3 id="nStatCompletedDeliveries">0</h3>
+                                    <p>Completed Deliveries</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Capacity Notice Card -->
+                        <div class="banner-card ngo-banner">
+                            <div class="banner-text">
+                                <h3>Receiving Capacity: <span id="nStatCapacity">0</span> meals / day</h3>
+                                <p>Our internal dispatch algorithm matches incoming food donations against your verified capacity and stated urgency levels.</p>
+                            </div>
+                            <button class="btn btn-secondary" onclick="switchNgoTab('ngo-request')">Submit Food Need</button>
+                        </div>
+
+                        <!-- Active Deliveries Preview -->
+                        <div class="card">
+                            <div class="card-header flex-between">
+                                <h3>Incoming Rescues</h3>
+                                <button class="btn btn-link" onclick="switchNgoTab('ngo-deliveries')">View All Deliveries →</button>
+                            </div>
+                            <div id="ngoActiveDeliveriesPreview">
+                                <p class="empty-text">Loading incoming deliveries...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Request Food Form -->
+                    <div id="tab-ngo-request" class="tab-pane">
+                        <div class="card max-w-700">
+                            <div class="card-header">
+                                <h3>Submit Food Requirement</h3>
+                                <p class="text-muted">Specify the meals required for your shelter or kitchen. The internal matching algorithm pairs this with available donations.</p>
+                            </div>
+
+                            <form id="requestFoodForm" onsubmit="handleCreateRequirement(event)">
+                                <div class="form-group">
+                                    <label for="reqFoodType">Food Type Required *</label>
+                                    <input type="text" id="reqFoodType" class="form-control" placeholder="e.g. Cooked Meals, Dal Rice, Bread, Dry Ration" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="reqQuantity">Quantity Needed (meals) *</label>
+                                        <input type="number" id="reqQuantity" class="form-control" min="1" placeholder="e.g. 50" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="reqUrgency">Urgency Level *</label>
+                                        <select id="reqUrgency" class="form-control" required>
+                                            <option value="1">1 — Standard (Within 24h)</option>
+                                            <option value="2">2 — Moderate (Within 12h)</option>
+                                            <option value="3" selected>3 — High (Within 6h)</option>
+                                            <option value="4">4 — Urgent (Immediate Need)</option>
+                                            <option value="5">5 — Critical Emergency</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reqInstructions">Additional Instructions / Dietary Notes</label>
+                                    <textarea id="reqInstructions" class="form-control" rows="3" placeholder="e.g. Vegetarian preferred; packaging required; gate 2 entry"></textarea>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-secondary btn-lg btn-block" id="btnSubmitRequirement">
+                                        Submit Requirement for Internal Match
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: My Requirements -->
+                    <div id="tab-ngo-requirements" class="tab-pane">
+                        <div class="card">
+                            <div class="card-header flex-between">
+                                <div>
+                                    <h3>My Requirements</h3>
+                                    <p class="text-muted">All active and fulfilled food requests from your organization.</p>
+                                </div>
+                                <button class="btn btn-sm btn-outline" onclick="loadNgoRequirements()">🔄 Refresh</button>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Req ID</th>
+                                            <th>Food Type</th>
+                                            <th>Quantity</th>
+                                            <th>Urgency</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ngoRequirementsTableBody">
+                                        <tr><td colspan="5" class="text-center">Loading requirements...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: My Deliveries -->
+                    <div id="tab-ngo-deliveries" class="tab-pane">
+                        <div class="card">
+                            <div class="card-header flex-between">
+                                <div>
+                                    <h3>Incoming Deliveries</h3>
+                                    <p class="text-muted">Matched rescues inbound to your shelter with volunteer and shortest-route details.</p>
+                                </div>
+                                <button class="btn btn-sm btn-outline" onclick="loadNgoDeliveries()">🔄 Refresh</button>
+                            </div>
+
+                            <div id="ngoDeliveriesContainer" class="deliveries-card-list">
+                                <p class="empty-text">Loading incoming deliveries...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div> <!-- /#ngoDashboardView -->
+
+    </div> <!-- /#appContainer -->
+
+
+    <!-- ================= AUTH MODAL ================= -->
+    <div id="authModal" class="modal-overlay" onclick="closeAuthModalOnBackdrop(event)">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeAuthModal()">&times;</button>
+
+            <!-- Role Selector Tabs -->
+            <div class="auth-role-tabs">
+                <button class="role-tab active" id="roleTabDonor" onclick="selectAuthRole('donor')">
+                    🍲 Food Donor
+                </button>
+                <button class="role-tab" id="roleTabNgo" onclick="selectAuthRole('ngo')">
+                    🏢 Relief NGO
+                </button>
+            </div>
+
+            <!-- Mode Switcher (Login vs Register) -->
+            <div class="auth-mode-switch">
+                <span id="authModePrompt">Already have an account?</span>
+                <button class="btn-link" id="authModeToggleBtn" onclick="toggleAuthMode()">
+                    Sign In
+                </button>
+            </div>
+
+            <div class="auth-form-container">
+                <!-- DONOR FORMS -->
+                <div id="donorAuthBlock">
+                    <!-- Donor Login -->
+                    <form id="donorLoginForm" class="auth-form" onsubmit="handleDonorLogin(event)">
+                        <h3 class="auth-title">Donor Sign In</h3>
+                        <p class="auth-subtitle">Access your private donation dashboard</p>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="dLoginEmail" class="form-control" placeholder="donor@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="dLoginPassword" class="form-control" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnDonorLogin">Sign In</button>
+                    </form>
+
+                    <!-- Donor Register -->
+                    <form id="donorRegisterForm" class="auth-form hidden" onsubmit="handleDonorRegister(event)">
+                        <h3 class="auth-title">Register as Food Donor</h3>
+                        <p class="auth-subtitle">Restaurants, caterers, or community donors</p>
+
+                        <div class="form-group">
+                            <label>Full Name / Business Name *</label>
+                            <input type="text" id="dRegName" class="form-control" placeholder="e.g. Green Valley Cafe" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" id="dRegEmail" class="form-control" placeholder="name@domain.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" id="dRegPhone" class="form-control" placeholder="e.g. 9876543210" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Default Pickup Address *</label>
+                            <input type="text" id="dRegAddress" class="form-control" placeholder="e.g. Prem Nagar, Dehradun" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Password *</label>
+                                <input type="password" id="dRegPassword" class="form-control" placeholder="Min. 8 characters" minlength="8" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password *</label>
+                                <input type="password" id="dRegConfirmPassword" class="form-control" placeholder="Re-enter password" minlength="8" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnDonorRegister">Create Donor Account</button>
+                    </form>
+                </div>
+
+                <!-- NGO FORMS -->
+                <div id="ngoAuthBlock" class="hidden">
+                    <!-- NGO Login -->
+                    <form id="ngoLoginForm" class="auth-form" onsubmit="handleNgoLogin(event)">
+                        <h3 class="auth-title">NGO Sign In</h3>
+                        <p class="auth-subtitle">Access your shelter requirement & delivery portal</p>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="nLoginEmail" class="form-control" placeholder="ngo@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="nLoginPassword" class="form-control" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-block btn-lg" id="btnNgoLogin">Sign In</button>
+                    </form>
+
+                    <!-- NGO Register -->
+                    <form id="ngoRegisterForm" class="auth-form hidden" onsubmit="handleNgoRegister(event)">
+                        <h3 class="auth-title">Register Verified NGO</h3>
+                        <p class="auth-subtitle">Shelters, orphanages, and community relief kitchens</p>
+
+                        <div class="form-group">
+                            <label>NGO / Foundation Name *</label>
+                            <input type="text" id="nRegName" class="form-control" placeholder="e.g. Hope Child Care Shelter" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Contact Email *</label>
+                                <input type="email" id="nRegEmail" class="form-control" placeholder="contact@ngo.org" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone / Contact Number *</label>
+                                <input type="tel" id="nRegPhone" class="form-control" placeholder="e.g. 9812345678" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Shelter Location / Address *</label>
+                                <input type="text" id="nRegLocation" class="form-control" placeholder="e.g. Clock Tower, Dehradun" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Meal Capacity (meals/day) *</label>
+                                <input type="number" id="nRegCapacity" class="form-control" min="5" placeholder="e.g. 100" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Password *</label>
+                                <input type="password" id="nRegPassword" class="form-control" placeholder="Min. 8 characters" minlength="8" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password *</label>
+                                <input type="password" id="nRegConfirmPassword" class="form-control" placeholder="Re-enter password" minlength="8" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-block btn-lg" id="btnNgoRegister">Register NGO Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FLOATING TOAST NOTIFICATION CONTAINER ================= -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
