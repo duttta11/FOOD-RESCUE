@@ -1,0 +1,7 @@
+FoodRescue — Frontend Architecture & UI Documentation
+
+The FoodRescue frontend is built as a lightweight,
+modern Single-Page Application (SPA) using standard web technologies (HTML5, CSS3, and ES6+ JavaScript) with zero external 
+framework dependencies (no React/Angular/Vue build steps needed).
+
+It delivers a clean, professional startup user experience modeled after on-demand delivery apps (like Swiggy and Zomato) using an emerald green and white palette, rounded cards, responsive sidebars, interactive delivery tracking steppers, and animated toast notifications.
